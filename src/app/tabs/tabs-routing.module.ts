@@ -38,6 +38,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'hola',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../hola/hola.module').then(m => m.HolaPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
